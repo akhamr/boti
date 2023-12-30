@@ -1,13 +1,25 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "@/styles/global.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from "next";
+import { doodle, sans, footer } from "@/styles/fonts";
 
 export const metadata: Metadata = {
-    title: "Boti",
+    title: {
+        template: "%s · Akhamr.tech",
+        default: "Boti.",
+    },
     description: "Chatbot berbasis AI",
+    openGraph: {
+        type: "website",
+        images: [
+            {
+                url: "default/og.png",
+                width: 300,
+            },
+        ],
+    },
 };
+
+// Motion page bugged 10.16.2
 
 export default function RootLayout({
     children,
@@ -15,8 +27,14 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <body className={inter.className}>{children}</body>
+        <html
+            lang="en"
+            className={`h-full ${doodle.variable} ${sans.variable} ${footer.variable}`}
+            suppressHydrationWarning
+        >
+            <body>
+                <main>{children}</main>
+            </body>
         </html>
     );
 }
