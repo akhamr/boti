@@ -12,7 +12,7 @@ export default function Navbar() {
                     href="/"
                     className="rounded px-2.5 py-1.5 font-doodle text-xl font-semibold transition duration-200 ease-in-out hover:bg-zinc-300 dark:hover:bg-zinc-700"
                 >
-                    Boti.
+                    Bot-I.
                 </Link>
                 <div className="flex items-center space-x-2.5 px-2.5">
                     <Link
