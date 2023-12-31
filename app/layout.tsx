@@ -5,8 +5,9 @@ import Navbar from "@/components/layout/navbar";
 import Providers from "@/components/layout/Provider";
 
 export const metadata: Metadata = {
+    metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
     title: {
-        template: "%s · Akhamr.tech",
+        template: "%s · Boti.",
         default: "Boti.",
     },
     description: "Chatbot berbasis AI",
