@@ -1,3 +1,17 @@
-export default function Chat() {
-    return <p>Ini Chat!</p>;
+import { redirect } from "next/navigation";
+import { auth } from "@/lib/auth";
+import { LogoutButton } from "@/components/layout/Login";
+
+export default async function Chat() {
+    const session = await auth();
+
+    if (!session?.user) {
+        redirect("/");
+    }
+
+    return (
+        <section id="main-content" className="flex h-full items-center">
+            <LogoutButton />
+        </section>
+    );
 }

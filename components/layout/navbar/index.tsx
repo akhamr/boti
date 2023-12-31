@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { InformationCircleIcon } from "@heroicons/react/16/solid";
 
 export default function Navbar() {
     return (
@@ -13,12 +14,12 @@ export default function Navbar() {
                 >
                     Boti.
                 </Link>
-                <div className="flex items-center space-x-3 px-2.5">
+                <div className="flex items-center space-x-2.5 px-2.5">
                     <Link
                         href="/about"
-                        className="rounded px-3.5 py-2.5 text-sm font-semibold transition duration-200 ease-in-out hover:bg-zinc-300 dark:hover:bg-zinc-700"
+                        className="rounded-full p-2 transition duration-200 ease-in-out hover:bg-zinc-300 dark:hover:bg-zinc-700"
                     >
-                        About
+                        <InformationCircleIcon className="h-6 w-6" />
                     </Link>
                     <ThemeSwitcher />
                 </div>
