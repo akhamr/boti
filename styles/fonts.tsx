@@ -1,6 +1,6 @@
-import { Mansalva, Nunito } from "next/font/google";
+import { Della_Respira, Nunito } from "next/font/google";
 
-const doodle = Mansalva({
+const doodle = Della_Respira({
     subsets: ["latin"],
     variable: "--font-doodle",
     weight: "400",
