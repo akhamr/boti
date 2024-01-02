@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { LoginButton } from "@/components/layout/Login";
 
-export default async function Home() {
+export default async function HomePage() {
     const session = await auth();
 
     if (session?.user) {
