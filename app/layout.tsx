@@ -1,8 +1,6 @@
 import "@/styles/global.css";
 import type { Metadata } from "next";
 import { doodle, sans } from "@/styles/fonts";
-import Navbar from "@/components/layout/navbar";
-import Providers from "@/components/layout/Provider";
 
 export const metadata: Metadata = {
     metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
@@ -37,12 +35,9 @@ export default function RootLayout({
             suppressHydrationWarning
         >
             <body className="flex h-full select-none flex-col justify-between">
-                <Providers>
-                    <Navbar />
-                    <main className="mx-auto max-w-[85%] flex-1">
+            <main className="mx-auto max-w-[85%] flex-1">
                         {children}
                     </main>
-                </Providers>
             </body>
         </html>
     );
