@@ -1,6 +1,9 @@
 import "@/styles/global.css";
 import type { Metadata } from "next";
-import { doodle, sans } from "@/styles/fonts";
+import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/navbar";
+import { cn } from "@/lib/utils";
+import { doodle, sans } from "@/styles/font";
 
 export const metadata: Metadata = {
     metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
@@ -10,18 +13,16 @@ export const metadata: Metadata = {
     },
     description:
         "Bot-I. (read: boti) is an AI-based chatbot built with Next.js, Vercel, and OpenAI API.",
-    openGraph: {
-        type: "website",
-        images: [
-            {
-                url: "default/og.png",
-                width: 300,
-            },
-        ],
-    },
+    // openGraph: {
+    //     type: "website",
+    //     images: [
+    //         {
+    //             url: "default/og.png",
+    //             width: 300,
+    //         },
+    //     ],
+    // },
 };
-
-// Motion page bugged 10.16.2
 
 export default function RootLayout({
     children,
@@ -29,15 +30,20 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html
-            lang="en"
-            className={`h-full ${doodle.variable} ${sans.variable}`}
-            suppressHydrationWarning
-        >
-            <body className="flex h-full select-none flex-col justify-between">
-            <main className="mx-auto max-w-[85%] flex-1">
+        <html lang="en" className="h-full" suppressHydrationWarning>
+            <body
+                className={cn(
+                    "flex h-full flex-col justify-between",
+                    doodle.variable,
+                    sans.variable
+                )}
+            >
+                <ThemeProvider attribute="class" enableSystem={false}>
+                    <Navbar />
+                    <main className="mx-auto max-w-[85%] flex-1">
                         {children}
                     </main>
+                </ThemeProvider>
             </body>
         </html>
     );
