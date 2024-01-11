@@ -1,17 +1,15 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
-import { LoginButton } from "@/components/login-button";
 
-export default async function Home() {
+export default async function Chat({ params }: { params: { id: string } }) {
     const session = await auth();
 
-    if (session?.user) {
-        redirect("/chat");
+    if (!session?.user) {
+        redirect("/");
     }
-
     return (
         <section id="main-content" className="flex h-full items-center">
-            <LoginButton />
+            <p>Ini Chat {params.id}!</p>
         </section>
     );
 }
