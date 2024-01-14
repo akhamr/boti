@@ -8,7 +8,7 @@ export default async function Chat({ params }: { params: { id: string } }) {
         redirect("/");
     }
     return (
-        <section id="main-content" className="flex h-full items-center">
+        <section id="chat-content">
             <p>Ini Chat {params.id}!</p>
         </section>
     );

@@ -10,7 +10,7 @@ export default async function Chat() {
     }
 
     return (
-        <section id="main-content" className="flex h-full items-center">
+        <section id="chat-content">
             <LogoutButton />
         </section>
     );

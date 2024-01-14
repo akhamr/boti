@@ -1,6 +1,6 @@
 import "@/styles/global.css";
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
+import { Providers } from "@/components/provider";
 import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
 import { doodle, sans } from "@/styles/font";
@@ -32,18 +32,16 @@ export default function RootLayout({
     return (
         <html lang="en" className="h-full" suppressHydrationWarning>
             <body
-                className={cn(
-                    "flex h-full flex-col justify-between",
-                    doodle.variable,
-                    sans.variable
-                )}
+                className={cn("flex flex-col", doodle.variable, sans.variable)}
             >
-                <ThemeProvider attribute="class" enableSystem={false}>
+                <Providers
+                    attribute="class"
+                    enableSystem={false}
+                    disableTransitionOnChange
+                >
                     <Navbar />
-                    <main className="mx-auto max-w-[85%] flex-1">
-                        {children}
-                    </main>
-                </ThemeProvider>
+                    <main className="flex-1 bg-muted/20">{children}</main>
+                </Providers>
             </body>
         </html>
     );

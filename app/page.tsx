@@ -10,7 +10,10 @@ export default async function Home() {
     }
 
     return (
-        <section id="main-content" className="flex h-full items-center">
+        <section
+            id="main-content"
+            className="flex h-[calc(100vh_-_57.5px)] items-center justify-center"
+        >
             <LoginButton />
         </section>
     );

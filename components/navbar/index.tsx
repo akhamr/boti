@@ -1,17 +1,17 @@
 import Link from "next/link";
 import ThemeToggle from "./theme-toggler";
 import { IconInformation } from "@/components/ui/icons";
-import SidebarToggle from "./sidebar-toggler";
+import SidebarToggle from "@/components/sidebar";
 
 export default async function Navbar() {
     return (
-        <nav className="sticky top-0 z-50 w-full border-b-2 border-dashed border-input">
+        <nav className="sticky top-0 z-50 w-full border-b-2 border-dashed border-input bg-background">
             <div className="mx-auto flex max-w-[85%] justify-between py-2">
                 <div className="flex items-center space-x-0.5">
                     <SidebarToggle />
                     <Link
                         href="/"
-                        className="font-doodle rounded px-2 py-1.5 text-xl font-semibold transition duration-200 ease-in-out hover:bg-input"
+                        className="rounded px-2 py-1.5 font-doodle text-xl font-semibold transition duration-200 ease-in-out hover:bg-input"
                     >
                         Bot-I.
                     </Link>
