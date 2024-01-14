@@ -71,23 +71,24 @@
         @apply border-border;
     }
 
-    *::-webkit-scrollbar {
-        @apply h-2.5 w-1.5;
-    }
-
-    *::-webkit-scrollbar-thumb {
-        @apply rounded-xl bg-zinc-300 dark:bg-zinc-800;
-    }
-
     html {
-        scrollbar-gutter: stable both-edges;
-        overflow-x: hidden;
         scroll-behavior: smooth;
     }
 
     body {
         @apply select-none bg-background font-sans text-foreground;
     }
+}
+
+.os-scrollbar {
+    --os-size: 0.5rem;
+    --os-handle-bg: rgb(212 212 216);
+    --os-handle-bg-hover: var(--os-handle-bg);
+    --os-handle-bg-active: var(--os-handle-bg);
+}
+
+.dark .os-scrollbar {
+    --os-handle-bg: rgb(39 39 42);
 }
 
 .toggle {
