@@ -1,4 +1,4 @@
-import NextAuth from "next-auth";
+import NextAuth, { type Session } from "next-auth";
 import GitHub from "next-auth/providers/github";
 
 export const {
@@ -14,7 +14,7 @@ export const {
             }
             return token;
         },
-        session: ({ session, token }) => {
+        session: ({ session, token }: { session: Session; token?: any }) => {
             if (session?.user && token?.id) {
                 session.user.id = String(token.id);
             }
