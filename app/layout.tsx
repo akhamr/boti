@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     //     type: "website",
     //     images: [
     //         {
-    //             url: "default/og.png",
+    //             url: "og.png",
     //             width: 300,
     //         },
     //     ],
