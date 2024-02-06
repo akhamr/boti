@@ -1,6 +1,6 @@
 import "@/styles/global.css";
 import type { Metadata } from "next";
-import { Providers } from "@/components/provider";
+import { Providers } from "@/components/providers";
 import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
 import { doodle, sans } from "@/styles/font";
