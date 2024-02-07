@@ -1,5 +1,14 @@
-import NextAuth, { type Session } from "next-auth";
+import NextAuth, { type Session, type DefaultSession } from "next-auth";
 import GitHub from "next-auth/providers/github";
+
+declare module "next-auth" {
+    interface Session {
+        user: {
+            /** The user's id. */
+            id: string;
+        } & DefaultSession["user"];
+    }
+}
 
 export const {
     handlers: { GET, POST },

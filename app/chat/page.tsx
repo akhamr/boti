@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
-import { LogoutButton } from "@/components/login-button";
+import Chat from "@/components/chat";
 
-export default async function Chat() {
+export default async function IndexPage() {
     const session = await auth();
 
     if (!session?.user) {
@@ -11,7 +11,7 @@ export default async function Chat() {
 
     return (
         <section id="chat-content">
-            <LogoutButton />
+            <Chat />
         </section>
     );
 }
