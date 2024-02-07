@@ -4,7 +4,6 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-
 function IconGitHub({ className, ...props }: React.ComponentProps<"svg">) {
     return (
         <svg
@@ -63,10 +62,84 @@ function IconSidebar({ className, ...props }: React.ComponentProps<"svg">) {
     );
 }
 
-export {
+function IconRefresh({ className, ...props }: React.ComponentProps<"svg">) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            fill="currentColor"
+            className={cn("h-4 w-4", className)}
+            {...props}
+        >
+            <path d="M197.67 186.37a8 8 0 0 1 0 11.29C196.58 198.73 170.82 224 128 224c-37.39 0-64.53-22.4-80-39.85V208a8 8 0 0 1-16 0v-48a8 8 0 0 1 8-8h48a8 8 0 0 1 0 16H55.44C67.76 183.35 93 208 128 208c36 0 58.14-21.46 58.36-21.68a8 8 0 0 1 11.31.05ZM216 40a8 8 0 0 0-8 8v23.85C192.53 54.4 165.39 32 128 32c-42.82 0-68.58 25.27-69.66 26.34a8 8 0 0 0 11.3 11.34C69.86 69.46 92 48 128 48c35 0 60.24 24.65 72.56 40H168a8 8 0 0 0 0 16h48a8 8 0 0 0 8-8V48a8 8 0 0 0-8-8Z" />
+        </svg>
+    );
+}
 
+function IconStop({ className, ...props }: React.ComponentProps<"svg">) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            fill="currentColor"
+            className={cn("h-4 w-4", className)}
+            {...props}
+        >
+            <path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm0 192a88 88 0 1 1 88-88 88.1 88.1 0 0 1-88 88Zm24-120h-48a8 8 0 0 0-8 8v48a8 8 0 0 0 8 8h48a8 8 0 0 0 8-8v-48a8 8 0 0 0-8-8Zm-8 48h-32v-32h32Z" />
+        </svg>
+    );
+}
+
+function IconPlus({ className, ...props }: React.ComponentProps<"svg">) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            fill="currentColor"
+            className={cn("h-4 w-4", className)}
+            {...props}
+        >
+            <path d="M224 128a8 8 0 0 1-8 8h-80v80a8 8 0 0 1-16 0v-80H40a8 8 0 0 1 0-16h80V40a8 8 0 0 1 16 0v80h80a8 8 0 0 1 8 8Z" />
+        </svg>
+    );
+}
+
+function IconArrowElbow({ className, ...props }: React.ComponentProps<"svg">) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            fill="currentColor"
+            className={cn("h-4 w-4", className)}
+            {...props}
+        >
+            <path d="M200 32v144a8 8 0 0 1-8 8H67.31l34.35 34.34a8 8 0 0 1-11.32 11.32l-48-48a8 8 0 0 1 0-11.32l48-48a8 8 0 0 1 11.32 11.32L67.31 168H184V32a8 8 0 0 1 16 0Z" />
+        </svg>
+    );
+}
+
+function IconArrowRight({ className, ...props }: React.ComponentProps<"svg">) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            fill="currentColor"
+            className={cn("h-4 w-4", className)}
+            {...props}
+        >
+            <path d="m221.66 133.66-72 72a8 8 0 0 1-11.32-11.32L196.69 136H40a8 8 0 0 1 0-16h156.69l-58.35-58.34a8 8 0 0 1 11.32-11.32l72 72a8 8 0 0 1 0 11.32Z" />
+        </svg>
+    );
+}
+
+export {
     IconGitHub,
     IconSpinner,
     IconSidebar,
     IconInformation,
+    IconRefresh,
+    IconStop,
+    IconArrowElbow,
+    IconArrowRight,
+    IconPlus,
 };

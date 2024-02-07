@@ -6,9 +6,9 @@ export default async function ChatLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="relative h-[calc(100vh_-_57.6px)]">
+        <div className="relative flex h-[calc(100vh_-_57.6px)]">
             <SidebarDesktop />
-            <div className="w-full overflow-auto p-2 duration-300 ease-in-out animate-in peer-[[data-state=open]]:lg:pl-[calc(250px_+_1rem)] peer-[[data-state=open]]:xl:pl-[calc(300px_+_1rem)]">
+            <div className="flex w-full flex-col justify-between p-2 duration-300 ease-in-out animate-in peer-[[data-state=open]]:lg:pl-[calc(250px_+_1rem)] peer-[[data-state=open]]:xl:pl-[calc(300px_+_1rem)]">
                 {children}
             </div>
         </div>
