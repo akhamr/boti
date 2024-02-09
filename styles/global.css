@@ -78,6 +78,16 @@
     body {
         @apply select-none bg-background font-sans text-foreground;
     }
+
+    *::-webkit-scrollbar {
+        height: 10px;
+        width: 5px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: rgba(80, 80, 80, 0.8);
+        border-radius: 10px;
+    }
 }
 
 .os-scrollbar {

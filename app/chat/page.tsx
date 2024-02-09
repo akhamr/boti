@@ -5,7 +5,6 @@ import Chat from "@/components/chat";
 
 export default async function IndexPage() {
     const session = await auth();
-
     const id = nanoid();
 
     if (!session?.user) {

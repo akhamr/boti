@@ -3,8 +3,10 @@
 import { useChat, type Message } from "ai/react";
 
 import { cn } from "@/lib/utils";
+
+import { ChatList } from "@/components/chat/chat-list";
 import { ChatPanel } from "@/components/chat/chat-panel";
-import { EmptyScreen } from "@/components/chat/empty-screen";
+import { EmptyScreen } from "@/components/chat/chat-index";
 import { usePathname, useRouter } from "next/navigation";
 
 interface ChatProps extends React.ComponentProps<"div"> {
@@ -20,7 +22,7 @@ export default function Chat({ id, initialMessages, className }: ChatProps) {
             initialMessages,
             id,
             onFinish() {
-                if (!path.includes("chat")) {
+                if (!path.includes("chat/")) {
                     router.push(`/chat/${id}`, { scroll: false });
                     router.refresh();
                 }
@@ -30,7 +32,7 @@ export default function Chat({ id, initialMessages, className }: ChatProps) {
         <>
             <div className={cn("pb-[200px] pt-4 md:pt-10", className)}>
                 {messages.length ? (
-                    <p>Iki chat!</p>
+                    <ChatList messages={messages} />
                 ) : (
                     <EmptyScreen setInput={setInput} />
                 )}

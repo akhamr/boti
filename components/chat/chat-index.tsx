@@ -7,37 +7,37 @@ import { ExternalLink } from "@/components/external-link";
 const exampleMessages = [
     {
         heading: "Explain technical concepts",
-        message: `What is a "serverless function"?`,
+        message: `Explain organic chemistry to 2nd grader`,
     },
     {
-        heading: "Summarize an article",
-        message: "Summarize the following article for a 2nd grader: \n",
+        heading: "Summarize a books",
+        message: "Summarize romeo and juliet in Shakespeare syle",
     },
     {
-        heading: "Draft an email",
-        message: `Draft an email to my boss about the following: \n`,
+        heading: "Make a code",
+        message: `Make a code of fibonacci sequence in Python`,
     },
 ];
 
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, "setInput">) {
     return (
         <div className="mx-auto max-w-2xl px-4">
-            <div className="rounded-lg border bg-background p-8">
+            <div className="rounded-lg border-2 border-dashed bg-background p-8">
                 <h1 className="mb-2 text-lg font-semibold">
                     Welcome to Next.js AI Chatbot!
                 </h1>
-                <p className="mb-2 leading-normal text-muted-foreground">
+                <p className="mb-2 text-muted-foreground">
                     This is an open source AI chatbot app template built with{" "}
                     <ExternalLink href="https://nextjs.org">
                         Next.js
-                    </ExternalLink>{" "}
-                    and{" "}
+                    </ExternalLink>
+                    {" and "}
                     <ExternalLink href="https://vercel.com/storage/kv">
                         Vercel KV
                     </ExternalLink>
                     .
                 </p>
-                <p className="leading-normal text-muted-foreground">
+                <p className="text-muted-foreground">
                     You can start a conversation here or try the following
                     examples:
                 </p>
