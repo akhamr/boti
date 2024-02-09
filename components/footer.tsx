@@ -1,23 +1,20 @@
-import React from 'react'
+import React from "react";
 
-import { cn } from '@/lib/utils'
-import { ExternalLink } from '@/components/external-link'
+import { cn } from "@/lib/utils";
+import { ExternalLink } from "@/components/external-link";
 
-export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
-  return (
-    <p
-      className={cn(
-        'px-2 text-center text-xs leading-normal text-muted-foreground',
-        className
-      )}
-      {...props}
-    >
-      Open source AI chatbot built with{' '}
-      <ExternalLink href="https://nextjs.org">Next.js</ExternalLink> and{' '}
-      <ExternalLink href="https://vercel.com/storage/kv">
-        Vercel KV
-      </ExternalLink>
-      .
-    </p>
-  )
+export function FooterText({ className, ...props }: React.ComponentProps<"p">) {
+    return (
+        <p
+            className={cn(
+                "px-2 text-center text-xs leading-normal text-muted-foreground",
+                className
+            )}
+            {...props}
+        >
+            <span className="font-doodle">Bot-I.</span> (read: boti) is an
+            AI-based chatbot built by{" "}
+            <ExternalLink href="https://akhamr.me">Akha</ExternalLink>.
+        </p>
+    );
 }

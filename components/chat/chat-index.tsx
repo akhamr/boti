@@ -7,15 +7,15 @@ import { ExternalLink } from "@/components/external-link";
 const exampleMessages = [
     {
         heading: "Explain technical concepts",
-        message: `Explain organic chemistry to 2nd grader`,
+        message: `Explain Organic Chemistry to 2nd grader`,
     },
     {
         heading: "Summarize a books",
-        message: "Summarize romeo and juliet in Shakespeare syle",
+        message: "Summarize Romeo and Juliet in Shakespeare's style",
     },
     {
         heading: "Make a code",
-        message: `Make a code of fibonacci sequence in Python`,
+        message: `Make a code of Fibonacci sequence in Python`,
     },
 ];
 
@@ -23,17 +23,17 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, "setInput">) {
     return (
         <div className="mx-auto max-w-2xl px-4">
             <div className="rounded-lg border-2 border-dashed bg-background p-8">
-                <h1 className="mb-2 text-lg font-semibold">
-                    Welcome to Next.js AI Chatbot!
+                <h1 className="mb-2 text-xl font-semibold">
+                    Welcome to <span className="font-doodle">Bot-I.</span>
                 </h1>
                 <p className="mb-2 text-muted-foreground">
-                    This is an open source AI chatbot app template built with{" "}
+                    This is an AI-based chatbot built with{" "}
                     <ExternalLink href="https://nextjs.org">
                         Next.js
                     </ExternalLink>
-                    {" and "}
-                    <ExternalLink href="https://vercel.com/storage/kv">
-                        Vercel KV
+                    {", and "}
+                    <ExternalLink href="https://platform.openai.com/">
+                        OpenAI API
                     </ExternalLink>
                     .
                 </p>
