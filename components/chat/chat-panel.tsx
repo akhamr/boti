@@ -18,12 +18,10 @@ export interface ChatPanelProps
         | "setInput"
     > {
     id?: string;
-    title?: string;
 }
 
 export function ChatPanel({
     id,
-    title,
     isLoading,
     stop,
     append,
@@ -61,7 +59,7 @@ export function ChatPanel({
                 </div>
                 <div className="space-y-3 rounded-xl border-2 border-dashed bg-background px-4 py-4">
                     <PromptForm
-                        onSubmit={async (value: any) => {
+                        onSubmit={async (value) => {
                             await append({
                                 id,
                                 content: value,

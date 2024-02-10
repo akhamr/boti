@@ -32,7 +32,11 @@ export default function RootLayout({
     return (
         <html lang="en" className="h-full" suppressHydrationWarning>
             <body
-                className={cn("flex flex-col", doodle.variable, sans.variable)}
+                className={cn(
+                    "flex min-h-screen flex-col",
+                    doodle.variable,
+                    sans.variable
+                )}
             >
                 <Providers
                     attribute="class"
