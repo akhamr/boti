@@ -4,7 +4,7 @@ import { type UseChatHelpers } from "ai/react";
 import { Button } from "@/components/ui/button";
 import { PromptForm } from "@/components/chat/chat-form";
 import { IconRefresh, IconStop } from "@/components/ui/icons";
-import { FooterText } from "../footer";
+import { FooterText } from "@/components/footer";
 
 export interface ChatPanelProps
     extends Pick<
@@ -57,7 +57,7 @@ export function ChatPanel({
                         )
                     )}
                 </div>
-                <div className="space-y-3 rounded-xl border-2 border-dashed bg-background px-4 py-4">
+                <div className="space-y-3 rounded-xl border-2 border-dashed bg-background p-4">
                     <PromptForm
                         onSubmit={async (value) => {
                             await append({

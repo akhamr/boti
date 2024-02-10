@@ -8,7 +8,6 @@ import { ChatList } from "@/components/chat/chat-list";
 import { ChatPanel } from "@/components/chat/chat-panel";
 import { EmptyScreen } from "@/components/chat/chat-index";
 import { usePathname, useRouter } from "next/navigation";
-import { ChatScrollAnchor } from "./chat-scroll-anchor";
 
 interface ChatProps extends React.ComponentProps<"div"> {
     initialMessages?: Message[];
@@ -36,10 +35,7 @@ export default function Chat({ id, initialMessages, className }: ChatProps) {
         <>
             <div className={cn("pb-[200px] pt-4 md:pt-10", className)}>
                 {messages.length ? (
-                    <>
-                        <ChatList messages={messages} />
-                        <ChatScrollAnchor trackVisibility={isLoading} />
-                    </>
+                    <ChatList messages={messages} />
                 ) : (
                     <EmptyScreen setInput={setInput} />
                 )}

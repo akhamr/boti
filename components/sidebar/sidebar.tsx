@@ -12,7 +12,7 @@ export function Sidebar({ className, children }: SidebarProps) {
 
     return (
         <div
-            data-state={isSidebarOpen && !isLoading ? "closed" : "open"}
+            data-state={isSidebarOpen && !isLoading ? "open" : "closed"}
             className={cn(className)}
         >
             {children}
