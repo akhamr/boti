@@ -31,33 +31,21 @@ export function ChatPanel({
     messages,
 }: ChatPanelProps) {
     return (
-        <div className="fixed inset-x-0 bottom-2 w-full duration-300 ease-in-out animate-in peer-[[data-state=open]]:group-[]:lg:pl-[250px] peer-[[data-state=open]]:group-[]:xl:pl-[300px]">
+        <div className="fixed inset-x-0 bottom-0 w-full bg-gradient-to-b from-transparent from-0% to-muted to-50% duration-300 ease-in-out animate-in peer-[[data-state=open]]:group-[]:lg:pl-[calc(250px_+_0.5rem)] peer-[[data-state=open]]:group-[]:xl:pl-[calc(300px_+_0.5rem)] dark:to-background">
             <div className="mx-auto max-w-2xl px-4">
-                <div className="flex h-12 items-center justify-center">
-                    {isLoading ? (
+                <div className="mb-2 flex justify-center">
+                    {!isLoading && messages?.length >= 2 && (
                         <Button
                             variant="outline"
-                            onClick={() => stop()}
-                            className="bg-background"
+                            className="bg-background/80"
+                            onClick={() => reload()}
                         >
-                            <IconStop className="mr-2" />
-                            Stop generating
+                            <IconRefresh className="mr-2" />
+                            Regenerate response
                         </Button>
-                    ) : (
-                        messages?.length >= 2 && (
-                            <div className="flex space-x-2">
-                                <Button
-                                    variant="outline"
-                                    onClick={() => reload()}
-                                >
-                                    <IconRefresh className="mr-2" />
-                                    Regenerate response
-                                </Button>
-                            </div>
-                        )
                     )}
                 </div>
-                <div className="space-y-3 rounded-xl border-2 border-dashed bg-background p-4">
+                <div className="mb-2 space-y-3 rounded-xl border-2 border-dashed bg-background p-4">
                     <PromptForm
                         onSubmit={async (value) => {
                             await append({
@@ -69,6 +57,7 @@ export function ChatPanel({
                         input={input}
                         setInput={setInput}
                         isLoading={isLoading}
+                        stop={stop}
                     />
                     <FooterText className="hidden sm:block" />
                 </div>

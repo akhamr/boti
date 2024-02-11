@@ -4,15 +4,15 @@ import { UseChatHelpers } from "ai/react";
 import { useEnterSubmit } from "@/lib/hooks/use-enter-submit";
 
 import { Button } from "@/components/ui/button";
-import { IconArrowElbow } from "@/components/ui/icons";
+import { IconArrowElbow, IconStop } from "@/components/ui/icons";
 
 export interface PromptProps
-    extends Pick<UseChatHelpers, "input" | "setInput"> {
+    extends Pick<UseChatHelpers, "stop" | "isLoading" | "input" | "setInput"> {
     onSubmit: (value: string) => void;
-    isLoading: boolean;
 }
 
 export function PromptForm({
+    stop,
     onSubmit,
     input,
     setInput,
@@ -54,15 +54,26 @@ export function PromptForm({
                     className="w-full resize-none bg-transparent p-3 pr-11 focus-within:outline-none"
                 />
                 <div className="absolute right-2 top-2">
-                    <Button
-                        type="submit"
-                        size="icon"
-                        disabled={isLoading || input === ""}
-                        className="h-8 w-8"
-                    >
-                        <IconArrowElbow />
-                        <span className="sr-only">Send message</span>
-                    </Button>
+                    {isLoading ? (
+                        <Button
+                            size="icon"
+                            onClick={() => stop()}
+                            className="h-8 w-8"
+                        >
+                            <IconStop />
+                            <span className="sr-only">Stop generating</span>
+                        </Button>
+                    ) : (
+                        <Button
+                            type="submit"
+                            size="icon"
+                            disabled={input === ""}
+                            className="h-8 w-8"
+                        >
+                            <IconArrowElbow />
+                            <span className="sr-only">Send message</span>
+                        </Button>
+                    )}
                 </div>
             </div>
         </form>
