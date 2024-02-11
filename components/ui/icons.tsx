@@ -190,6 +190,34 @@ function IconDownload({ className, ...props }: React.ComponentProps<"svg">) {
     );
 }
 
+function IconPlus({ className, ...props }: React.ComponentProps<"svg">) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            fill="currentColor"
+            className={cn("h-4 w-4", className)}
+            {...props}
+        >
+            <path d="M224 128a8 8 0 0 1-8 8h-80v80a8 8 0 0 1-16 0v-80H40a8 8 0 0 1 0-16h80V40a8 8 0 0 1 16 0v80h80a8 8 0 0 1 8 8Z" />
+        </svg>
+    );
+}
+
+function IconMessage({ className, ...props }: React.ComponentProps<"svg">) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            fill="currentColor"
+            className={cn("h-4 w-4", className)}
+            {...props}
+        >
+            <path d="M216 48H40a16 16 0 0 0-16 16v160a15.84 15.84 0 0 0 9.25 14.5A16.05 16.05 0 0 0 40 240a15.89 15.89 0 0 0 10.25-3.78.69.69 0 0 0 .13-.11L82.5 208H216a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16ZM40 224Zm176-32H82.5a16 16 0 0 0-10.3 3.75l-.12.11L40 224V64h176Z" />
+        </svg>
+    );
+}
+
 export {
     IconGitHub,
     IconSpinner,
@@ -204,4 +232,6 @@ export {
     IconCopy,
     IconCheck,
     IconDownload,
+    IconPlus,
+    IconMessage,
 };
