@@ -19,7 +19,7 @@ export default function SidebarToggle() {
                             toggleSidebar();
                         }}
                     >
-                        <IconSidebar className="7 w-7" />
+                        <IconSidebar className="size-7" />
                     </button>
                     <p className="font-doodle text-xl">|</p>
                 </>

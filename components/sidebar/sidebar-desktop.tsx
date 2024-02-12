@@ -39,7 +39,7 @@ export async function SidebarDesktop() {
                         {Array.from({ length: 10 }).map((_, i) => (
                             <div
                                 key={i}
-                                className="6 w-full shrink-0 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-800"
+                                className="h-6 w-full shrink-0 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-800"
                             />
                         ))}
                     </div>
@@ -49,7 +49,7 @@ export async function SidebarDesktop() {
             </Suspense>
             <Button
                 variant="outline"
-                className="12 mr-2 justify-normal bg-zinc-50 p-2 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:hover:bg-zinc-300/10"
+                className="mr-2 h-12 justify-normal bg-zinc-50 p-2 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:hover:bg-zinc-300/10"
             >
                 {session.user?.image ? (
                     <Image
@@ -64,7 +64,7 @@ export async function SidebarDesktop() {
                         width={32}
                     />
                 ) : (
-                    <div className="7 flex w-7 shrink-0 select-none items-center justify-center rounded-full bg-muted/50 font-medium uppercase text-muted-foreground">
+                    <div className="flex size-7 shrink-0 select-none items-center justify-center rounded-full bg-muted/50 font-medium uppercase text-muted-foreground">
                         {session.user?.name
                             ? getUserInitials(session.user?.name)
                             : null}

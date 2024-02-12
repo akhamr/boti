@@ -30,7 +30,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className="full" suppressHydrationWarning>
+        <html lang="en" className="h-full" suppressHydrationWarning>
             <body
                 className={cn("flex flex-col", doodle.variable, sans.variable)}
             >
