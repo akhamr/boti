@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { type Session } from "next-auth";
+import { signOut } from "next-auth/react";
 
 import {
     Menubar,
@@ -52,7 +53,13 @@ export function UserMenu({ user }: UserMenuProps) {
                         <span className="ml-2">Clear History</span>
                     </MenubarItem>
                     <MenubarSeparator className="mx-0.5 my-1.5" />
-                    <MenubarItem>
+                    <MenubarItem
+                        onClick={() =>
+                            signOut({
+                                callbackUrl: "/",
+                            })
+                        }
+                    >
                         <IconOut />
                         <span className="ml-2">Log Out</span>
                     </MenubarItem>

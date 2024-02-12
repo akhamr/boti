@@ -190,7 +190,7 @@ function IconDownload({ className, ...props }: React.ComponentProps<"svg">) {
     );
 }
 
-function IconPlus({ className, ...props }: React.ComponentProps<"svg">) {
+function IconNew({ className, ...props }: React.ComponentProps<"svg">) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +199,7 @@ function IconPlus({ className, ...props }: React.ComponentProps<"svg">) {
             className={cn("size-4", className)}
             {...props}
         >
-            <path d="M224 128a8 8 0 0 1-8 8h-80v80a8 8 0 0 1-16 0v-80H40a8 8 0 0 1 0-16h80V40a8 8 0 0 1 16 0v80h80a8 8 0 0 1 8 8Z" />
+            <path d="M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,120v88a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h88a8,8,0,0,1,0,16H48V208H208V120a8,8,0,0,1,16,0Z" />
         </svg>
     );
 }
@@ -213,7 +213,7 @@ function IconMessage({ className, ...props }: React.ComponentProps<"svg">) {
             className={cn("size-4", className)}
             {...props}
         >
-            <path d="M216 48H40a16 16 0 0 0-16 16v160a15.84 15.84 0 0 0 9.25 14.5A16.05 16.05 0 0 0 40 240a15.89 15.89 0 0 0 10.25-3.78.69.69 0 0 0 .13-.11L82.5 208H216a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16ZM40 224Zm176-32H82.5a16 16 0 0 0-10.3 3.75l-.12.11L40 224V64h176Z" />
+            <path d="M128,20A108,108,0,0,0,31.85,177.23L21,209.66A20,20,0,0,0,46.34,235l32.43-10.81A108,108,0,1,0,128,20Zm0,192a84,84,0,0,1-42.06-11.27,12,12,0,0,0-6-1.62,12.1,12.1,0,0,0-3.8.62l-29.79,9.93,9.93-29.79a12,12,0,0,0-1-9.81A84,84,0,1,1,128,212Z" />
         </svg>
     );
 }
@@ -260,7 +260,7 @@ export {
     IconCopy,
     IconCheck,
     IconDownload,
-    IconPlus,
+    IconNew,
     IconMessage,
     IconClear,
     IconOut,

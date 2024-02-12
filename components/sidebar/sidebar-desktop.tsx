@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { Sidebar } from "@/components/sidebar/sidebar";
 import { SidebarList } from "@/components/sidebar/sidebar-list";
 import Link from "next/link";
-import { IconPlus } from "../ui/icons";
+import { IconNew } from "../ui/icons";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { UserMenu } from "./sidebar-menu";
@@ -22,19 +22,19 @@ export async function SidebarDesktop() {
                 href="/chat"
                 className={cn(
                     buttonVariants({ variant: "outline" }),
-                    "mb-2 mr-2 justify-start bg-zinc-50 shadow-none transition-colors hover:bg-zinc-200/40 dark:bg-zinc-900 dark:hover:bg-zinc-300/10"
+                    "mb-2 mr-2 h-12 justify-between bg-zinc-50 px-3 shadow-none transition-colors hover:bg-zinc-200/40 dark:bg-zinc-900 dark:hover:bg-zinc-300/10"
                 )}
             >
-                <IconPlus className="-translate-x-2 stroke-2" />
                 New Chat
+                <IconNew />
             </Link>
             <Suspense
                 fallback={
-                    <div className="space-y-1">
+                    <div className="mb-2 h-full space-y-1 pr-2">
                         {Array.from({ length: 10 }).map((_, i) => (
                             <div
                                 key={i}
-                                className="h-6 w-full shrink-0 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-800"
+                                className="h-10 w-full shrink-0 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-800"
                             />
                         ))}
                     </div>
