@@ -5,14 +5,9 @@ import { Sidebar } from "@/components/sidebar/sidebar";
 import { SidebarList } from "@/components/sidebar/sidebar-list";
 import Link from "next/link";
 import { IconPlus } from "../ui/icons";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-
-function getUserInitials(name: string) {
-    const [firstName, lastName] = name.split(" ");
-    return lastName ? `${firstName[0]}${lastName[0]}` : firstName.slice(0, 2);
-}
+import { UserMenu } from "./sidebar-menu";
 
 export async function SidebarDesktop() {
     const session = await auth();
@@ -47,31 +42,7 @@ export async function SidebarDesktop() {
             >
                 <SidebarList userId={session.user.id} />
             </Suspense>
-            <Button
-                variant="outline"
-                className="mr-2 h-12 justify-normal bg-zinc-50 p-2 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:hover:bg-zinc-300/10"
-            >
-                {session.user?.image ? (
-                    <Image
-                        className="size-8 select-none rounded-full ring-1 ring-zinc-100/10 transition-opacity duration-300 hover:opacity-80"
-                        src={
-                            session.user?.image
-                                ? `${session.user.image}&s=60`
-                                : ""
-                        }
-                        alt={session.user.name ?? "Avatar"}
-                        height={32}
-                        width={32}
-                    />
-                ) : (
-                    <div className="flex size-7 shrink-0 select-none items-center justify-center rounded-full bg-muted/50 font-medium uppercase text-muted-foreground">
-                        {session.user?.name
-                            ? getUserInitials(session.user?.name)
-                            : null}
-                    </div>
-                )}
-                <span className="ml-2">{session.user?.name}</span>
-            </Button>
+            <UserMenu user={session.user} />
         </Sidebar>
     );
 }
