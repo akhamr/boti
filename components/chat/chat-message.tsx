@@ -24,14 +24,14 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
         >
             <div
                 className={cn(
-                    "flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border shadow",
+                    "flex size-8 shrink-0 select-none items-center justify-center rounded-md border shadow",
                     message.role === "user"
                         ? "bg-accent"
                         : "bg-primary text-primary-foreground"
                 )}
             >
                 {message.role === "user" ? (
-                    <IconUser className="h-[18px] w-[18px]" />
+                    <IconUser className="size-[18px]" />
                 ) : (
                     <IconOpenAI />
                 )}

@@ -39,7 +39,7 @@ export async function SidebarDesktop() {
                         {Array.from({ length: 10 }).map((_, i) => (
                             <div
                                 key={i}
-                                className="h-6 w-full shrink-0 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-800"
+                                className="6 w-full shrink-0 animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-800"
                             />
                         ))}
                     </div>
@@ -49,11 +49,11 @@ export async function SidebarDesktop() {
             </Suspense>
             <Button
                 variant="outline"
-                className="mr-2 h-12 justify-normal bg-zinc-50 p-2 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:hover:bg-zinc-300/10"
+                className="12 mr-2 justify-normal bg-zinc-50 p-2 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:hover:bg-zinc-300/10"
             >
                 {session.user?.image ? (
                     <Image
-                        className="h-8 w-8 select-none rounded-full ring-1 ring-zinc-100/10 transition-opacity duration-300 hover:opacity-80"
+                        className="size-8 select-none rounded-full ring-1 ring-zinc-100/10 transition-opacity duration-300 hover:opacity-80"
                         src={
                             session.user?.image
                                 ? `${session.user.image}&s=60`
@@ -64,7 +64,7 @@ export async function SidebarDesktop() {
                         width={32}
                     />
                 ) : (
-                    <div className="flex h-7 w-7 shrink-0 select-none items-center justify-center rounded-full bg-muted/50 font-medium uppercase text-muted-foreground">
+                    <div className="7 flex w-7 shrink-0 select-none items-center justify-center rounded-full bg-muted/50 font-medium uppercase text-muted-foreground">
                         {session.user?.name
                             ? getUserInitials(session.user?.name)
                             : null}

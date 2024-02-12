@@ -34,7 +34,7 @@ export default async function Navbar() {
                         href="/about"
                         className="rounded-full p-2 transition duration-200 ease-in-out hover:bg-input"
                     >
-                        <IconInformation className="h-6 w-6" />
+                        <IconInformation className="size-6" />
                     </Link>
                     <ThemeToggle />
                 </div>

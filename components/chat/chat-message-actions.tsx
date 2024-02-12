@@ -29,7 +29,7 @@ export function ChatMessageActions({
             {...props}
         >
             <Button
-                className="h-8 w-8"
+                className="size-8"
                 variant="ghost"
                 size="icon"
                 onClick={onCopy}

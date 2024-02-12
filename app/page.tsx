@@ -12,7 +12,7 @@ export default async function Home() {
     return (
         <section
             id="main-content"
-            className="flex h-[calc(100vh_-_57.6px)] items-center justify-center"
+            className="[calc(100dvh_-_57.6px)] flex items-center justify-center"
         >
             <LoginButton />
         </section>

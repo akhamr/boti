@@ -58,7 +58,7 @@ export function PromptForm({
                         <Button
                             size="icon"
                             onClick={() => stop()}
-                            className="h-8 w-8"
+                            className="size-8"
                         >
                             <IconStop />
                             <span className="sr-only">Stop generating</span>
@@ -68,7 +68,7 @@ export function PromptForm({
                             type="submit"
                             size="icon"
                             disabled={input === ""}
-                            className="h-8 w-8"
+                            className="size-8"
                         >
                             <IconArrowElbow />
                             <span className="sr-only">Send message</span>
