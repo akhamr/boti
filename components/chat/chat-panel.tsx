@@ -31,7 +31,7 @@ export function ChatPanel({
     messages,
 }: ChatPanelProps) {
     return (
-        <div className="fixed inset-x-0 bottom-0 w-full bg-gradient-to-b from-transparent from-0% to-muted to-80% duration-300 ease-in-out animate-in peer-[[data-state=open]]:group-[]:lg:pl-[calc(250px_+_0.5rem)] peer-[[data-state=open]]:group-[]:xl:pl-[calc(300px_+_0.5rem)] dark:to-background">
+        <div className="fixed inset-x-0 bottom-0 w-full bg-gradient-to-b from-transparent from-0% to-muted to-80% duration-300 ease-in-out animate-in peer-[[data-state=open]]:group-[]:md:pl-[calc(250px_+_0.5rem)] dark:to-background">
             <div className="mx-auto max-w-2xl px-4">
                 <div className="mb-2 flex justify-center">
                     {!isLoading && messages?.length >= 2 && (
