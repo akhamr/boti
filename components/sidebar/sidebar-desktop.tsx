@@ -19,7 +19,7 @@ export async function SidebarDesktop() {
     }
 
     return (
-        <Sidebar className="peer fixed bottom-2 left-2 top-[68px] z-30 hidden -translate-x-[calc(100%_+_0.5rem)] flex-col rounded-md border-2 border-dashed bg-background p-2 pr-0 duration-300 ease-in-out data-[state=open]:translate-x-0 md:flex md:w-[250px]">
+        <Sidebar className="peer fixed bottom-2 left-2 top-[68px] z-30 flex w-[250px] -translate-x-[calc(100%_+_0.5rem)] flex-col rounded-md border-2 border-dashed bg-background p-2 pr-0 duration-300 ease-in-out data-[state=open]:translate-x-0">
             <Link
                 href="/chat"
                 className={cn(

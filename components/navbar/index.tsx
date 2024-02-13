@@ -32,7 +32,8 @@ export default async function Navbar() {
                 <div className="flex items-center space-x-2.5 pr-2">
                     <Link
                         href="/about"
-                        className="rounded-full p-2 transition duration-200 ease-in-out hover:bg-input"
+                        className="pointer-events-none rounded-full p-2 transition duration-200 ease-in-out hover:bg-input"
+                        tabIndex={-1}
                     >
                         <IconInformation className="size-6" />
                     </Link>
