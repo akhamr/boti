@@ -19,12 +19,6 @@ export function PromptForm({
     isLoading,
 }: PromptProps) {
     const { formRef, onKeyDown } = useEnterSubmit();
-    const inputRef = React.useRef<HTMLTextAreaElement>(null);
-    React.useEffect(() => {
-        if (inputRef.current) {
-            inputRef.current.focus();
-        }
-    }, []);
 
     return (
         <form
@@ -40,7 +34,6 @@ export function PromptForm({
         >
             <div className="relative flex rounded-md border-2 border-dashed bg-background">
                 <Textarea
-                    ref={inputRef}
                     tabIndex={0}
                     onKeyDown={onKeyDown}
                     rows={1}
