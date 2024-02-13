@@ -64,35 +64,35 @@ export async function getChat(id: string, userId: string) {
 //     return revalidatePath(path);
 // }
 
-// export async function clearChats() {
-//     const session = await auth();
+export async function clearChats() {
+    const session = await auth();
 
-//     if (!session?.user?.id) {
-//         return {
-//             error: "Unauthorized",
-//         };
-//     }
+    if (!session?.user?.id) {
+        return {
+            error: "Unauthorized",
+        };
+    }
 
-//     const chats: string[] = await kv.zrange(
-//         `user:chat:${session.user.id}`,
-//         0,
-//         -1
-//     );
-//     if (!chats.length) {
-//         return redirect("/");
-//     }
-//     const pipeline = kv.pipeline();
+    const chats: string[] = await kv.zrange(
+        `user:chat:${session.user.id}`,
+        0,
+        -1
+    );
+    if (!chats.length) {
+        return redirect("/chat");
+    }
+    const pipeline = kv.pipeline();
 
-//     for (const chat of chats) {
-//         pipeline.del(chat);
-//         pipeline.zrem(`user:chat:${session.user.id}`, chat);
-//     }
+    for (const chat of chats) {
+        pipeline.del(chat);
+        pipeline.zrem(`user:chat:${session.user.id}`, chat);
+    }
 
-//     await pipeline.exec();
+    await pipeline.exec();
 
-//     revalidatePath("/");
-//     return redirect("/");
-// }
+    revalidatePath("/chat");
+    return redirect("/chat");
+}
 
 // export async function getSharedChat(id: string) {
 //     const chat = await kv.hgetall<Chat>(`chat:${id}`);

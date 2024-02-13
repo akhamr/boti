@@ -8,9 +8,11 @@ import { IconNew } from "../ui/icons";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { UserMenu } from "./sidebar-menu";
+import { getChats } from "@/lib/actions";
 
 export async function SidebarDesktop() {
     const session = await auth();
+    const chats = await getChats(session?.user.id);
 
     if (!session?.user?.id) {
         return null;
@@ -42,7 +44,7 @@ export async function SidebarDesktop() {
             >
                 <SidebarList userId={session.user.id} />
             </Suspense>
-            <UserMenu user={session.user} />
+            <UserMenu user={session.user} chat={chats} />
         </Sidebar>
     );
 }
