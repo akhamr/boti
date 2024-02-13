@@ -27,6 +27,7 @@ export function ClearHistory({
     isEnabled = false,
     clearChats,
 }: ClearHistoryProps) {
+    const router = useRouter();
     const [open, setOpen] = React.useState(false);
     const [isPending, startTransition] = React.useTransition();
 
@@ -63,6 +64,8 @@ export function ClearHistory({
                             startTransition(() => {
                                 clearChats().then(() => {
                                     setOpen(false);
+                                    router.push("/chat");
+                                    router.refresh();
                                 });
                             });
                         }}
