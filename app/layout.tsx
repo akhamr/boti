@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         default: "Bot-I. by Akha",
     },
     description:
-        "Bot-I. (read: boti) is an AI-based chatbot built with Next.js, Vercel KV, and OpenAI API.",
+        "An AI-based chatbot built with OpenAI API and a lot of stress...",
 };
 
 export default function RootLayout({
