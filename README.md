@@ -16,9 +16,7 @@ npm i
 npm run dev
 ```
 
-Create a `.env.local` file similar to [`.env.example`](https://github.com/akhamr/boti/blob/master/.env.example).
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a `.env.local` file similar to [`.env.example`](https://github.com/akhamr/boti/blob/master/.env.example), and open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Or do you want to deploy it yourself? Just click this button here &dArr;
 
