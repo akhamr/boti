@@ -98,7 +98,7 @@ const CodeBlock: FC<Props> = memo(({ language, value }) => {
     return (
         <div className="codeblock relative w-full bg-zinc-950 font-sans">
             <div className="flex w-full items-center justify-between bg-zinc-800 px-4 py-2 text-zinc-100">
-                <span className="px-2 text-xs lowercase">{language}</span>
+                <span className="px-2 lowercase">{language}</span>
                 <div className="flex items-center space-x-1">
                     <Button
                         variant="ghost"
@@ -136,7 +136,7 @@ const CodeBlock: FC<Props> = memo(({ language, value }) => {
                 }}
                 codeTagProps={{
                     style: {
-                        fontSize: "0.9rem",
+                        fontSize: "0.95em",
                         fontFamily: "var(--font-mono)",
                     },
                 }}
