@@ -2,7 +2,7 @@
   <img src="/public/preview.png" alt='preview'>
 </p>
 <p align="center">
-  Source code of my <a href='https://boti.akhamr.me'>first project</a>. Made using next.js, vercel KV, and OpenAI API.
+  Source code of my <a href='https://boti.akhamr.me'>first project</a>. Made using Next.js, Vercel KV, and OpenAI API.
 </p>
 
 ## Running Locally
