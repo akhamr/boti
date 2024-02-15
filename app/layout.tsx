@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { doodle, sans } from "@/styles/font";
 
 export const metadata: Metadata = {
-    metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
+    metadataBase: new URL(`https://boti.akhamr.me`),
     title: {
         template: "%s · Bot-I.",
         default: "Bot-I. by Akha",
