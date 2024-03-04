@@ -27,7 +27,8 @@ Or do you want to deploy it yourself? Just click this button here &dArr;
 -   **Framework**: [Next.js](https://nextjs.org/)
 -   **Deployment**: [Vercel](https://vercel.com)
 -   **Styling**: [Tailwind CSS](https://tailwindcss.com)
--   - **Component**: [shacdn/ui](https://ui.shadcn.com/)
+    - **Component**: [shacdn/ui](https://ui.shadcn.com/)
+    - **Icon**: [Phosphor Icons](https://phosphoricons.com/)
 -   **Authentication**: [Auth.js](https://authjs.dev/)
 -   **Database**: [Vercel KV](https://vercel.com/docs/storage/vercel-kv)
 
