@@ -11,8 +11,7 @@ export const metadata: Metadata = {
         template: "%s · Bot-I.",
         default: "Bot-I. by Akha",
     },
-    description:
-        "An AI-based chatbot built with OpenAI API and a lot of stress...",
+    description: "An AI-based chatbot built with Vercel AI and Gemini API.",
 };
 
 export default function RootLayout({
