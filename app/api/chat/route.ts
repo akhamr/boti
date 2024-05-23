@@ -17,15 +17,15 @@ export async function POST(req: Request) {
     const { messages } = json;
 
     const res = await streamText({
-        model: google("models/gemini-1.5-pro-latest"),
+        model: google("models/gemini-1.5-flash-latest"),
         temperature: 0.7,
-        maxTokens: 512,
+        maxTokens: 256,
         messages,
     });
 
     return new StreamingTextResponse(
         res.toAIStream({
-            async onCompletion(completion) {
+            async onFinal(completion) {
                 const title = json.messages[0].content.substring(0, 100);
                 const id = json.id ?? nanoid();
                 const createdAt = Date.now();
