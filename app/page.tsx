@@ -11,6 +11,8 @@ export default function Login() {
   return (
     <section className="flex h-dvh items-center justify-center">
       <Button
+        variant="ghost"
+        className="bg-background border"
         onClick={() => {
           setIsLoading(true);
           SignIn();

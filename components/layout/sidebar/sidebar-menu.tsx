@@ -32,7 +32,7 @@ export function UserMenu({ user, chat }: UserMenuProps) {
       <DropdownMenuTrigger
         className={cn(
           buttonVariants({ variant: "outline" }),
-          "bg-muted h-12 justify-start px-2.5 py-1.5"
+          "bg-muted h-12 justify-start px-2.5 py-1.5",
         )}
       >
         {user?.image ? (

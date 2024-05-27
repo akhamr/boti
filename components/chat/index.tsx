@@ -38,7 +38,7 @@ export default function Chat({ id, initialMessages }: ChatProps) {
   });
   return (
     <>
-      <div className="animate-in w-full select-text pb-52 md:pb-64 pt-6 duration-300 ease-in-out md:pt-10 peer-[[data-state=open]]:md:pl-[calc(250px_+_1rem)] overflow-auto">
+      <div className="animate-in w-full select-text overflow-auto pb-52 pt-6 duration-300 ease-in-out md:pb-64 md:pt-10 peer-[[data-state=open]]:md:pl-[calc(250px_+_1rem)]">
         {messages.length ? (
           <ChatList messages={messages} />
         ) : (

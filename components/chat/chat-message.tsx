@@ -20,7 +20,7 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
           "flex size-8 select-none items-center justify-center rounded-md border shadow",
           message.role === "user"
             ? "bg-accent text-accent-foreground"
-            : "bg-primary text-primary-foreground"
+            : "bg-primary text-primary-foreground",
         )}
       >
         {message.role === "user" ? (
