@@ -20,7 +20,7 @@ const exampleMessages = [
 
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, "setInput">) {
   return (
-    <div className="mx-auto max-w-2xl">
+    <div className="mx-auto px-6 lg:px-0 max-w-2xl">
       <div className="bg-background rounded-lg border-2 border-dashed p-8">
         <h1 className="mb-2 text-xl font-semibold">
           Welcome to <span className="font-doodle">Bot-I.</span>

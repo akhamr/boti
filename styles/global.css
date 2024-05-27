@@ -80,13 +80,12 @@
   }
 
   html {
-    scrollbar-gutter: stable both-edges;
+    scrollbar-gutter: unset;
     scroll-behavior: smooth;
-    overflow-y: scroll;
   }
 
   body {
-    @apply flex h-dvh select-none flex-col bg-background text-foreground;
+    @apply overflow-hidden bg-background text-foreground;
   }
 }
 
