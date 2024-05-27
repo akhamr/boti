@@ -9,7 +9,7 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <section className="flex h-full items-center justify-center">
+    <section className="flex h-dvh items-center justify-center">
       <Button
         variant="outline"
         onClick={() => {
