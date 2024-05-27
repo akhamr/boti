@@ -1,9 +1,9 @@
 "use client";
 
-import { ServerActionResult } from "@/lib/types";
-import { Button } from "@/components/ui/button";
+import { ServerActionResult, type Chat } from "@/lib/types";
 import {
   AlertDialog,
+  AlertDialogTrigger,
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
@@ -11,21 +11,18 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { IconClear, IconSpinner } from "@/components/ui/icons";
+import { Button } from "@/components/ui/button";
+import { IconSpinner, IconTrash } from "@/components/ui/icons";
 import { Redirect } from "@/lib/actions";
 import * as React from "react";
 
-interface ClearHistoryProps {
-  isEnabled: boolean;
-  clearChats: () => ServerActionResult<void>;
+interface SidebarActionsProps {
+  chat: Chat;
+  removeChat: (args: { id: string; path: string }) => ServerActionResult<void>;
 }
 
-export function ClearHistory({
-  isEnabled = false,
-  clearChats,
-}: ClearHistoryProps) {
+export function SidebarActions({ chat, removeChat }: SidebarActionsProps) {
   const [open, setOpen] = React.useState(false);
   const [isPending, startTransition] = React.useTransition();
 
@@ -34,29 +31,33 @@ export function ClearHistory({
       <AlertDialogTrigger asChild>
         <Button
           variant="ghost"
-          className="w-full justify-start"
-          disabled={!isEnabled || isPending}
+          size="icon"
+          className="-mr-1 ml-1.5 size-7 p-1.5"
+          onClick={() => setOpen(true)}
+          disabled={isPending}
         >
-          {isPending ? <IconSpinner /> : <IconClear />}
-          <span className="ml-2">Clear History</span>
+          <IconTrash />
+          <span className="sr-only">Delete</span>
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently delete your chat history and remove your data
+            This will permanently delete your chat message and remove your data
             from our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel disabled={isPending}>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
           <AlertDialogAction
-            disabled={isPending}
             onClick={(e) => {
               e.preventDefault();
               startTransition(() => {
-                clearChats().then(() => {
+                removeChat({
+                  id: chat.id,
+                  path: chat.path,
+                }).then(() => {
                   setOpen(false);
                   Redirect();
                 });

@@ -1,20 +1,30 @@
-import { redirect } from "next/navigation";
-import { auth } from "@/lib/auth";
-import { LoginButton } from "@/components/login-button";
+"use client";
 
-export default async function Home() {
-    const session = await auth();
+import { SignIn } from "@/lib/actions";
+import { IconSpinner, IconGitHub } from "@/components/ui/icons";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
-    if (session?.user) {
-        redirect("/chat");
-    }
+export default function Login() {
+  const [isLoading, setIsLoading] = useState(false);
 
-    return (
-        <section
-            id="main-content"
-            className="flex h-[calc(100dvh_-_57.6px)] items-center justify-center"
-        >
-            <LoginButton />
-        </section>
-    );
+  return (
+    <section className="flex h-full items-center justify-center">
+      <Button
+        variant="outline"
+        onClick={() => {
+          setIsLoading(true);
+          SignIn();
+        }}
+        disabled={isLoading}
+      >
+        {isLoading ? (
+          <IconSpinner className="mr-2 animate-spin" />
+        ) : (
+          <IconGitHub className="mr-2" />
+        )}
+        Login with GitHub
+      </Button>
+    </section>
+  );
 }

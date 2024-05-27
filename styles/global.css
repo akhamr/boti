@@ -3,138 +3,125 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --background: 0 0% 100%;
-        --foreground: 240 10% 3.9%;
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-        --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
 
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
 
-        --primary: 240 5.9% 10%;
-        --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
 
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
+    --secondary: 0 0% 87.5%;
+    --secondary-foreground: 0 0% 12%;
 
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
+    --muted: 0 0% 97.5%;
+    --muted-foreground: 0 0% 30%;
 
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
+    --accent: 0 0% 92.5%;
+    --accent-foreground: 0 0% 9%;
 
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 0 0% 98%;
 
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 10% 3.9%;
+    --border: 0 0% 77.5%;
+    --input: 0 0% 82.5%;
+    --ring: 0 0% 3.9%;
 
-        --radius: 0.5rem;
-    }
+    --radius: 0.5rem;
+  }
 
-    .dark {
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 90%;
 
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
 
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 93.1%;
 
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 75%;
 
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
 
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
+    --destructive: 0 90.6% 70.8%;
+    --destructive-foreground: 0 0% 98%;
 
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
-    }
+    --border: 0 0% 30%;
+    --input: 0 0% 25%;
+    --ring: 0 0% 83.1%;
+  }
 }
 
 @layer base {
-    * {
-        @apply border-border;
-    }
+  * {
+    @apply border-border;
+  }
 
-    html {
-        scroll-behavior: smooth;
-    }
+  *::-webkit-scrollbar {
+    @apply size-1.5;
+  }
 
-    body {
-        @apply select-none bg-background font-sans text-foreground;
-    }
+  *::-webkit-scrollbar-thumb {
+    @apply rounded-sm bg-neutral-400 dark:bg-neutral-700;
+  }
 
-    *::-webkit-scrollbar {
-        height: 10px;
-        width: 5px;
-    }
+  html {
+    scrollbar-gutter: stable both-edges;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+  }
 
-    *::-webkit-scrollbar-thumb {
-        background: rgba(80, 80, 80, 0.8);
-        border-radius: 10px;
-    }
-}
-
-.os-scrollbar {
-    --os-size: 0.5rem;
-    --os-handle-bg: rgb(212 212 216);
-    --os-handle-bg-hover: var(--os-handle-bg);
-    --os-handle-bg-active: var(--os-handle-bg);
-}
-
-.dark .os-scrollbar {
-    --os-handle-bg: rgb(39 39 42);
+  body {
+    @apply flex h-dvh select-none flex-col bg-background text-foreground;
+  }
 }
 
 .toggle {
-    --size: 20.25px;
+  --size: 18px;
 
-    appearance: none;
-    outline: none;
-    cursor: pointer;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
 
-    width: var(--size);
-    height: var(--size);
-    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
-    border-radius: 999px;
-    color: hsl(240, 100%, 95%);
+  width: var(--size);
+  height: var(--size);
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+  border-radius: 999px;
+  color: hsl(0, 0, 95%);
 
-    transition: all 500ms;
+  transition: all 200ms;
 }
 
 .toggle:checked {
-    --ray-size: calc(var(--size) * -0.4);
-    --offset-orthogonal: calc(var(--size) * 0.65);
-    --offset-diagonal: calc(var(--size) * 0.45);
+  --ray-size: calc(var(--size) * -0.4);
+  --offset-orthogonal: calc(var(--size) * 0.65);
+  --offset-diagonal: calc(var(--size) * 0.45);
 
-    transform: scale(0.75);
-    color: hsl(40, 100%, 50%);
-    box-shadow:
-        inset 0 0 0 var(--size),
-        calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
-        var(--offset-orthogonal) 0 0 var(--ray-size),
-        0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
-        0 var(--offset-orthogonal) 0 var(--ray-size),
-        calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
-            var(--ray-size),
-        var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
-        calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0
-            var(--ray-size),
-        var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0
-            var(--ray-size);
+  transform: scale(0.75);
+  color: hsl(44.7, 100%, 67.6%);
+  box-shadow:
+    inset 0 0 0 var(--size),
+    calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+    var(--offset-orthogonal) 0 0 var(--ray-size),
+    0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+    0 var(--offset-orthogonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
+      var(--ray-size),
+    var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+    var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
 }
