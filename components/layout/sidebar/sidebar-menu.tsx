@@ -32,7 +32,7 @@ export function UserMenu({ user, chat }: UserMenuProps) {
       <DropdownMenuTrigger
         className={cn(
           buttonVariants({ variant: "outline" }),
-          "bg-muted h-12 justify-start px-2.5 py-1.5",
+          "bg-muted h-12 justify-start px-2.5 py-1.5"
         )}
       >
         {user?.image ? (
@@ -48,9 +48,9 @@ export function UserMenu({ user, chat }: UserMenuProps) {
             {user.name && getUserInitials(user.name)}
           </div>
         )}
-        <span className="ml-2">{user?.name}</span>
+        <span className="ml-3">{user?.name}</span>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" alignOffset={-6} className="w-[230px]">
+      <DropdownMenuContent align="start" className="w-[230px]">
         <DropdownMenuItem asChild>
           <ClearHistory clearChats={clearChats} isEnabled={chat?.length > 0} />
         </DropdownMenuItem>
