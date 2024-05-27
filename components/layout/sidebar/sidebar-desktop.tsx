@@ -20,12 +20,12 @@ export async function SidebarDesktop() {
 
   return (
     // eslint-disable-next-line tailwindcss/enforces-negative-arbitrary-values
-    <Sidebar className="bg-background peer fixed bottom-1.5 left-1 top-[68px] z-30 flex w-[250px] -translate-x-[calc(100%_+_1rem)] flex-col rounded-lg border-2 border-dashed p-2 transition-transform duration-300 ease-in-out data-[state=open]:translate-x-0">
+    <Sidebar className="bg-background peer fixed bottom-2 left-3 md:left-1 top-[72px] z-30 flex w-[250px] -translate-x-[calc(100%_+_1rem)] flex-col rounded-lg border-2 border-dashed p-2 transition-transform duration-300 ease-in-out data-[state=open]:translate-x-0">
       <Link
         href="/chat"
         className={cn(
           buttonVariants({ variant: "outline" }),
-          "bg-muted mb-2 h-12 justify-between p-3",
+          "bg-muted mb-2 h-12 justify-between p-3"
         )}
       >
         New Chat

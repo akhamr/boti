@@ -29,7 +29,7 @@ export function ChatPanel({
   handleSubmit,
 }: ChatPanelProps) {
   return (
-    <div className="animate-in from-background fixed inset-x-0 bottom-0 bg-gradient-to-t duration-300 ease-in-out peer-[[data-state=open]]:md:pl-[calc(250px_+_1rem)]">
+    <div className="animate-in mx-6 from-background fixed inset-x-0 bottom-0 bg-gradient-to-t duration-300 ease-in-out peer-[[data-state=open]]:md:pl-[calc(250px_+_1rem)]">
       <div className="mx-auto mb-2 max-w-2xl space-y-2">
         <div className="flex justify-center">
           {!isLoading && messages?.length >= 2 && (
