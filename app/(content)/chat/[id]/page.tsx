@@ -1,8 +1,8 @@
-import { auth } from "@/lib/auth";
-import { getChat } from "@/lib/actions";
 import Chat from "@/components/chat";
-import { notFound, redirect } from "next/navigation";
+import { getChat } from "@/lib/actions";
+import { auth } from "@/lib/auth";
 import { type Metadata } from "next";
+import { notFound, redirect } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -30,11 +30,7 @@ export default async function ChatId({ params }: { params: { id: string } }) {
 
   const chat = await getChat(params.id, session.user.id);
 
-  if (!chat) {
-    notFound();
-  }
-
-  if (chat?.userId !== session.user.id) {
+  if (!chat || chat?.userId !== session.user.id) {
     notFound();
   }
 
