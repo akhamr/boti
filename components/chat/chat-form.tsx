@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { IconArrowElbow, IconStop } from "@/components/ui/icons";
+import { type UseChatHelpers } from "ai/react";
 import * as React from "react";
 import Textarea from "react-textarea-autosize";
-import { UseChatHelpers } from "ai/react";
 
 export function PromptForm({
   input,

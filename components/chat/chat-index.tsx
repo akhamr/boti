@@ -1,7 +1,7 @@
+import { ExternalLink } from "@/components/external-link";
 import { Button } from "@/components/ui/button";
 import { IconArrowRight } from "@/components/ui/icons";
-import { ExternalLink } from "@/components/external-link";
-import { UseChatHelpers } from "ai/react";
+import { type UseChatHelpers } from "ai/react";
 
 const exampleMessages = [
   {

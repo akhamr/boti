@@ -1,12 +1,12 @@
-import { cn } from "@/lib/utils";
-import { CodeBlock } from "@/components/ui/code-block";
-import { MemoizedReactMarkdown } from "@/components/markdown";
-import { IconGemini, IconUser } from "@/components/ui/icons";
 import { ChatMessageActions } from "@/components/chat/chat-message-actions";
-import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
-import { Message } from "ai";
+import { MemoizedReactMarkdown } from "@/components/markdown";
+import { CodeBlock } from "@/components/ui/code-block";
+import { IconGemini, IconUser } from "@/components/ui/icons";
+import { cn } from "@/lib/utils";
+import { type Message } from "ai";
 import React from "react";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 
 export interface ChatMessageProps {
   message: Message;
@@ -20,7 +20,7 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
           "flex size-8 select-none items-center justify-center rounded-md border shadow",
           message.role === "user"
             ? "bg-accent text-accent-foreground"
-            : "bg-primary text-primary-foreground",
+            : "bg-primary text-primary-foreground"
         )}
       >
         {message.role === "user" ? (

@@ -3,9 +3,9 @@
 
 "use client";
 
-import { useCopyToClipboard } from "@/lib/hooks/use-copy-to-clipboard";
-import { IconCheck, IconCopy, IconDownload } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
+import { IconCheck, IconCopy, IconDownload } from "@/components/ui/icons";
+import { useCopyToClipboard } from "@/lib/hooks/use-copy-to-clipboard";
 import { FC, memo } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -65,9 +65,9 @@ const CodeBlock: FC<Props> = memo(({ language, value }) => {
     const fileExtension = programmingLanguages[language] || ".file";
     const suggestedFileName = `file-${generateRandomString(
       3,
-      true,
+      true
     )}${fileExtension}`;
-    const fileName = window.prompt("Enter file name" || "", suggestedFileName);
+    const fileName = window.prompt("Enter file name", suggestedFileName);
 
     if (!fileName) {
       // User pressed cancel on prompt.
