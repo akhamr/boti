@@ -1,13 +1,13 @@
-import { cn } from "@/lib/utils";
 import { ExternalLink } from "@/components/external-link";
+import { cn } from "@/lib/utils";
 import React from "react";
 
 export function FooterText({ className, ...props }: React.ComponentProps<"p">) {
   return (
     <p
       className={cn(
-        "text-muted-foreground px-2 text-center text-xs leading-normal",
-        className,
+        "px-2 text-center text-xs leading-normal text-muted-foreground",
+        className
       )}
       {...props}
     >

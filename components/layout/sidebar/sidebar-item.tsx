@@ -1,7 +1,7 @@
 "use client";
 
-import { IconMessage } from "@/components/ui/icons";
 import { buttonVariants } from "@/components/ui/button";
+import { IconMessage } from "@/components/ui/icons";
 import { type Chat } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import * as React from "react";
@@ -27,8 +27,8 @@ export function SidebarItem({ chat, children }: SidebarItemProps) {
         href={chat.path}
         className={cn(
           buttonVariants({ variant: "ghost" }),
-          "hover:bg-accent w-full justify-normal",
-          isActive && "bg-accent font-semibold",
+          "w-full justify-normal hover:bg-accent",
+          isActive && "bg-accent font-semibold"
         )}
       >
         <div className="mr-1.5">

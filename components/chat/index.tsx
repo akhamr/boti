@@ -1,8 +1,8 @@
 "use client";
 
+import { EmptyScreen } from "@/components/chat/chat-index";
 import { ChatList } from "@/components/chat/chat-list";
 import { ChatPanel } from "@/components/chat/chat-panel";
-import { EmptyScreen } from "@/components/chat/chat-index";
 import { useChat, type Message } from "ai/react";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -38,7 +38,7 @@ export default function Chat({ id, initialMessages }: ChatProps) {
   });
   return (
     <>
-      <div className="animate-in w-full select-text overflow-auto pb-52 pt-6 duration-300 ease-in-out md:pb-64 md:pt-10 peer-[[data-state=open]]:md:pl-[calc(250px_+_1rem)]">
+      <div className="w-full select-text overflow-auto pb-52 pt-6 duration-300 ease-in-out animate-in md:pb-64 md:pt-10 peer-[[data-state=open]]:md:pl-[calc(250px_+_1rem)]">
         {messages.length ? (
           <ChatList messages={messages} />
         ) : (

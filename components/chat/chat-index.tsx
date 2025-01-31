@@ -21,11 +21,11 @@ const exampleMessages = [
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, "setInput">) {
   return (
     <div className="mx-auto max-w-2xl px-6 lg:px-0">
-      <div className="bg-background rounded-lg border-2 border-dashed p-8">
+      <div className="rounded-lg border-2 border-dashed bg-background p-8">
         <h1 className="mb-2 text-xl font-semibold">
           Welcome to <span className="font-doodle">Bot-I.</span>
         </h1>
-        <p className="text-muted-foreground mb-2">
+        <p className="mb-2 text-muted-foreground">
           This is an AI-based chatbot built with{" "}
           <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>
           {", and "}
@@ -45,7 +45,7 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, "setInput">) {
               className="h-auto p-0 text-base"
               onClick={() => setInput(message.message)}
             >
-              <IconArrowRight className="text-muted-foreground mr-2" />
+              <IconArrowRight className="mr-2 text-muted-foreground" />
               {message.heading}
             </Button>
           ))}

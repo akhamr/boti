@@ -1,9 +1,9 @@
-import { cn } from "@/lib/utils";
-import { nunito, doodle } from "@/styles/font";
-import { Providers } from "@/components/providers";
 import Navbar from "@/components/layout/navbar";
-import type { Metadata } from "next";
+import { Providers } from "@/components/providers";
+import { cn } from "@/lib/utils";
+import { doodle, nunito } from "@/styles/font";
 import "@/styles/global.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://boti.akhamr.me`),
@@ -20,11 +20,11 @@ export default function Root({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn(nunito.className, doodle.variable)}>
         <Providers>
           <Navbar />
-          <main className="bg-muted mt-14 flex-1">{children}</main>
+          <main className="mt-14 flex-1 bg-muted">{children}</main>
         </Providers>
       </body>
     </html>

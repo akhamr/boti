@@ -1,9 +1,7 @@
 "use client";
 
-import { ServerActionResult, type Chat } from "@/lib/types";
 import {
   AlertDialog,
-  AlertDialogTrigger,
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
@@ -11,10 +9,12 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
+  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { IconSpinner, IconTrash } from "@/components/ui/icons";
 import { Redirect } from "@/lib/actions";
+import { ServerActionResult, type Chat } from "@/lib/types";
 import * as React from "react";
 
 interface SidebarActionsProps {

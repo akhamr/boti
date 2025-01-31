@@ -2,9 +2,9 @@
 
 import { auth, signIn, signOut } from "@/lib/auth";
 import { type Chat } from "@/lib/types";
+import { kv } from "@vercel/kv";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { kv } from "@vercel/kv";
 
 export async function getChats(userId?: string | null) {
   if (!userId) {
@@ -67,7 +67,7 @@ export async function clearChats() {
   const chats: string[] = await kv.zrange(
     `user:chat:${session.user.id}`,
     0,
-    -1,
+    -1
   );
   if (!chats.length) {
     return redirect("/chat");

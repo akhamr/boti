@@ -1,7 +1,7 @@
 import { Chat } from "@/lib/types";
 
-import { SidebarItem } from "@/components/layout/sidebar/sidebar-item";
 import { SidebarActions } from "@/components/layout/sidebar/sidebar-actions";
+import { SidebarItem } from "@/components/layout/sidebar/sidebar-item";
 
 import { removeChat } from "@/lib/actions";
 

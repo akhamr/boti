@@ -1,8 +1,7 @@
 "use client";
 
-import { IconOut } from "@/components/ui/icons";
 import { ClearHistory } from "@/components/clear-history";
-import { type Chat } from "@/lib/types";
+import { buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,11 +9,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { IconOut } from "@/components/ui/icons";
 import { SignOut, clearChats } from "@/lib/actions";
+import { type Chat } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import Image from "next/image";
 import { type Session } from "next-auth";
+import Image from "next/image";
 
 export interface UserMenuProps {
   user: Session["user"];
@@ -32,7 +32,7 @@ export function UserMenu({ user, chat }: UserMenuProps) {
       <DropdownMenuTrigger
         className={cn(
           buttonVariants({ variant: "outline" }),
-          "bg-muted h-12 justify-start px-2.5 py-1.5",
+          "h-12 justify-start bg-muted px-2.5 py-1.5"
         )}
       >
         {user?.image ? (
@@ -44,7 +44,7 @@ export function UserMenu({ user, chat }: UserMenuProps) {
             width={32}
           />
         ) : (
-          <div className="bg-border flex size-8 items-center justify-center rounded-full font-medium uppercase">
+          <div className="flex size-8 items-center justify-center rounded-full bg-border font-medium uppercase">
             {user.name && getUserInitials(user.name)}
           </div>
         )}

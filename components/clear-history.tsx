@@ -1,7 +1,5 @@
 "use client";
 
-import { ServerActionResult } from "@/lib/types";
-import { Button } from "@/components/ui/button";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,8 +11,10 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
 import { IconClear, IconSpinner } from "@/components/ui/icons";
 import { Redirect } from "@/lib/actions";
+import { ServerActionResult } from "@/lib/types";
 import * as React from "react";
 
 interface ClearHistoryProps {

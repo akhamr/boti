@@ -1,12 +1,12 @@
-import { UserMenu } from "./sidebar-menu";
-import { IconNew } from "../../ui/icons";
-import { buttonVariants } from "../../ui/button";
 import { auth } from "@/lib/auth";
+import { buttonVariants } from "../../ui/button";
+import { IconNew } from "../../ui/icons";
+import { UserMenu } from "./sidebar-menu";
 
 import { Sidebar } from "@/components/layout/sidebar/sidebar";
 import { SidebarList } from "@/components/layout/sidebar/sidebar-list";
-import { cn } from "@/lib/utils";
 import { getChats } from "@/lib/actions";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -19,13 +19,12 @@ export async function SidebarDesktop() {
   }
 
   return (
-    // eslint-disable-next-line tailwindcss/enforces-negative-arbitrary-values
-    <Sidebar className="bg-background peer fixed bottom-2 left-3 top-[72px] z-30 flex w-[250px] -translate-x-[calc(100%_+_1rem)] flex-col rounded-lg border-2 border-dashed p-2 transition-transform duration-300 ease-in-out data-[state=open]:translate-x-0 md:left-1">
+    <Sidebar className="peer fixed bottom-2 left-3 top-[72px] z-30 flex w-[250px] -translate-x-[calc(100%_+_1rem)] flex-col rounded-lg border-2 border-dashed bg-background p-2 transition-transform duration-300 ease-in-out data-[state=open]:translate-x-0 md:left-1">
       <Link
         href="/chat"
         className={cn(
           buttonVariants({ variant: "outline" }),
-          "bg-muted mb-2 h-12 justify-between p-3",
+          "mb-2 h-12 justify-between bg-muted p-3"
         )}
       >
         New Chat
@@ -37,7 +36,7 @@ export async function SidebarDesktop() {
             {Array.from({ length: 10 }).map((_, i) => (
               <div
                 key={i}
-                className="bg-secondary h-11 w-full shrink-0 animate-pulse rounded-md"
+                className="h-11 w-full shrink-0 animate-pulse rounded-md bg-secondary"
               />
             ))}
           </div>

@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { PromptForm } from "@/components/chat/chat-form";
-import { IconRefresh, IconStop } from "@/components/ui/icons";
 import { FooterText } from "@/components/layout/footer";
+import { Button } from "@/components/ui/button";
+import { IconRefresh, IconStop } from "@/components/ui/icons";
 import { type UseChatHelpers } from "ai/react";
 import * as React from "react";
 
@@ -29,7 +29,7 @@ export function ChatPanel({
   handleSubmit,
 }: ChatPanelProps) {
   return (
-    <div className="animate-in from-background fixed inset-x-0 bottom-0 bg-gradient-to-t duration-300 ease-in-out peer-[[data-state=open]]:md:pl-[calc(250px_+_1rem)]">
+    <div className="fixed inset-x-0 bottom-0 bg-gradient-to-t from-background duration-300 ease-in-out animate-in peer-[[data-state=open]]:md:pl-[calc(250px_+_1rem)]">
       <div className="mx-auto mb-2 max-w-2xl space-y-2 px-6 lg:px-0">
         <div className="flex justify-center">
           {!isLoading && messages?.length >= 2 && (
@@ -43,7 +43,7 @@ export function ChatPanel({
             </Button>
           )}
         </div>
-        <div className="bg-background space-y-4 rounded-xl border-2 border-dashed p-4">
+        <div className="space-y-4 rounded-xl border-2 border-dashed bg-background p-4">
           <PromptForm
             input={input}
             isLoading={isLoading}

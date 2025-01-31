@@ -1,8 +1,8 @@
 "use client";
 
-import { SignIn } from "@/lib/actions";
-import { IconSpinner, IconGitHub } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
+import { IconGitHub, IconSpinner } from "@/components/ui/icons";
+import { SignIn } from "@/lib/actions";
 import { useState } from "react";
 
 export default function Login() {
@@ -12,7 +12,7 @@ export default function Login() {
     <section className="flex h-dvh items-center justify-center">
       <Button
         variant="ghost"
-        className="bg-background border"
+        className="border bg-background"
         onClick={() => {
           setIsLoading(true);
           SignIn();

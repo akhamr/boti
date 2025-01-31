@@ -16,7 +16,7 @@ export function PromptForm({
 >) {
   return (
     <form onSubmit={handleSubmit}>
-      <div className="bg-background relative flex rounded-md border-2 border-dashed">
+      <div className="relative flex rounded-md border-2 border-dashed bg-background">
         <Textarea
           tabIndex={0}
           rows={1}

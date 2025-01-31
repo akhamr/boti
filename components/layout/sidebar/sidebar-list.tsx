@@ -1,5 +1,5 @@
-import { getChats } from "@/lib/actions";
 import { SidebarItems } from "@/components/layout/sidebar/sidebar-items";
+import { getChats } from "@/lib/actions";
 import { cache } from "react";
 
 interface SidebarListProps {
@@ -20,7 +20,7 @@ export async function SidebarList({ userId }: SidebarListProps) {
     </div>
   ) : (
     <div className="flex h-full items-center justify-center">
-      <p className="text-foreground text-sm">No chat history</p>
+      <p className="text-sm text-foreground">No chat history</p>
     </div>
   );
 }

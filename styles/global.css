@@ -85,7 +85,7 @@
   }
 
   body {
-    @apply overflow-hidden bg-background text-foreground;
+    @apply h-screen overflow-hidden bg-background text-foreground;
   }
 }
 
