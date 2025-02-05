@@ -6,7 +6,7 @@ import "@/styles/global.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://boti.akhamr.me`),
+  metadataBase: new URL(`https://boti.akhamr.dev`),
   title: {
     template: "%s · Bot-I.",
     default: "Bot-I. by Akha",
@@ -24,7 +24,7 @@ export default function Root({
       <body className={cn(nunito.className, doodle.variable)}>
         <Providers>
           <Navbar />
-          <main className="mt-14 flex-1 bg-muted">{children}</main>
+          <main className="mt-14 h-dvh overflow-auto bg-muted">{children}</main>
         </Providers>
       </body>
     </html>

@@ -13,7 +13,7 @@ export function FooterText({ className, ...props }: React.ComponentProps<"p">) {
     >
       <span className="font-doodle">Bot-I.</span> (read: boti) is an AI-based
       chatbot built by{" "}
-      <ExternalLink href="https://akhamr.me">Akha</ExternalLink>.
+      <ExternalLink href="https://akhamr.dev">Akha</ExternalLink>.
     </p>
   );
 }

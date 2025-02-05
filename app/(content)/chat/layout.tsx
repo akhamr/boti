@@ -6,7 +6,7 @@ export default async function ChatLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex h-dvh overflow-hidden">
+    <section>
       <SidebarDesktop />
       {children}
     </section>
